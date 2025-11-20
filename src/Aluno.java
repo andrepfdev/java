@@ -1,3 +1,7 @@
+package src;
+
+
+
 public class Aluno {
     String nome;
     String email;
@@ -12,22 +16,22 @@ public class Aluno {
         return nome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public int getMatricula() {
-        return matricula;
-    }
-
     public String setNome(String nome) {
         this.nome = nome;
         return nome;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public String setEmail(String email) {
         this.email = email;
         return email;
+    }
+
+    public int getMatricula() {
+        return matricula;
     }
 
     public int setMatricula(int matricula) {
