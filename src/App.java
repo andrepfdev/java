@@ -48,6 +48,8 @@ public class App {
         Aluno aluno2 = new Aluno("Bob", "bob@email.com"); 
         Aluno aluno3 = new Aluno("Pedro", "pedro@ig.com");  
 
+        // Simule o cadastro dos alunos aqui
+
         matriculador.cadastrarAluno(aluno1);
         matriculador.cadastrarAluno(aluno2);
         matriculador.cadastrarAluno(aluno3);
@@ -110,5 +112,4 @@ public class App {
 
         Thread.sleep(2000);
     }
-
 }
