@@ -6,6 +6,7 @@ import src.Disciplina;
 import src.Aluno;
 
 public class App {
+    private static Matriculador matriculador = new Matriculador(new ArrayList<>(), new ArrayList<>());
     
     public static void main(String[] args) throws Exception {
         // crie duas ou três disciplinas (com capacidade pequena) e três ou quatro alunos válidos.
@@ -16,15 +17,15 @@ public class App {
         }
     }
 
-    public static void executar() {
+    public static void executar() throws InterruptedException {
         inicializarDisciplinas();
         inicializarAlunos();
         realizarMatriculas();
         testarMatriculasInvalidas();
     }
 
-    private static void inicializarDisciplinas() {
-        System.out.println("=-" * 20);
+    private static void inicializarDisciplinas() throws InterruptedException {
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println("Inicializando disciplinas...");
         
         Disciplina disciplina1 = new Disciplina("DB101", "Banco de Dados", 2);
@@ -37,8 +38,8 @@ public class App {
         Thread.sleep(1500);
     }
 
-    private static void inicializarAlunos() {
-        System.out.println("=-" * 20);
+    private static void inicializarAlunos() throws InterruptedException {
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println("Inicializando alunos...");
         
         Aluno aluno1 = new Aluno("Alice", "alice@email.com");
@@ -52,8 +53,8 @@ public class App {
         Thread.sleep(1500);
     }
 
-    private static void realizarMatriculas() {
-        System.out.println("=-" * 20);
+    private static void realizarMatriculas() throws InterruptedException {
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Realizando matrículas...");
 
         boolean sucesso1 = matriculador.matricular(1, "DB101");
@@ -72,8 +73,8 @@ public class App {
     }
 
     // simula uma matricula que falha por disciplina lotada e uma por aluno inexistente
-    public static void testarMatriculasInvalidas() {
-        System.out.println("=-" * 20);
+    public static void testarMatriculasInvalidas() throws InterruptedException {
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Testando matrículas inválidas...");
 
         boolean sucesso1 = matriculador.matricular(4, "DB101");
