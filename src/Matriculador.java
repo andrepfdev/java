@@ -42,6 +42,7 @@ public class Matriculador {
             }
         }
         if (aluno == null) {
+            System.out.println(" - Aluno com matrícula " + matricula + " não encontrado.");
             return false; // Aluno não encontrado
         }
 
@@ -52,7 +53,9 @@ public class Matriculador {
                 break;
             }
         }
+
         if (disciplina == null || disciplina.isLotada()) {
+            System.out.println(" - Disciplina " + codigoDisciplina + " não encontrada ou lotada.");
             return false; // Disciplina não encontrada ou lotada
         }
 
