@@ -15,10 +15,21 @@ public class Matriculador {
     }
 
     public void cadastrarDisciplina(Disciplina disciplina) {
+        System.out.println("Cadastrando disciplina: " + disciplina.getTitulo());
+        System.out.println("Disciplina cadastrada com sucesso!");
         ofertas.add(disciplina);
     }
 
     public void cadastrarAluno(Aluno aluno) {
+
+        if (aluno == null) {
+            System.out.println("Erro: Aluno nulo não pode ser cadastrado.");
+            return;
+        }
+
+        System.out.println("Cadastrando aluno(a): " + aluno.getNome());
+        aluno.setMatricula(alunos.size() + 1); // Atribui uma matrícula sequencial
+        System.out.println("Aluno(a) cadastrado com sucesso! Matrícula: " + aluno.getMatricula());
         alunos.add(aluno);
     }
 
