@@ -1,15 +1,12 @@
-package src;
-
 import java.util.List;
 import java.util.ArrayList;
-import src.Disciplina;
-import src.Aluno;
 
 public class App {
     private static Matriculador matriculador = new Matriculador(new ArrayList<>(), new ArrayList<>());
-    
+
     public static void main(String[] args) throws Exception {
-        // crie duas ou três disciplinas (com capacidade pequena) e três ou quatro alunos válidos.
+        // crie duas ou três disciplinas (com capacidade pequena) e três ou quatro
+        // alunos válidos.
         try {
             executar();
         } catch (Exception e) {
@@ -28,25 +25,25 @@ public class App {
     private static void inicializarDisciplinas() throws InterruptedException {
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println("Inicializando disciplinas...");
-        
+
         Disciplina disciplina1 = new Disciplina("DB101", "Banco de Dados", 2);
         Disciplina disciplina2 = new Disciplina("POO202", "Programação Orientada a Objetos", 2);
         Disciplina disciplina3 = new Disciplina("ED303", "Estrutura de Dados", 1);
-        
+
         matriculador.cadastrarDisciplina(disciplina1);
         matriculador.cadastrarDisciplina(disciplina2);
         matriculador.cadastrarDisciplina(disciplina3);
-        
+
         Thread.sleep(1500);
     }
 
     private static void inicializarAlunos() throws InterruptedException {
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println("Inicializando alunos...");
-        
+
         Aluno aluno1 = new Aluno("Alice", "alice@email.com");
-        Aluno aluno2 = new Aluno("Bob", "bob@email.com"); 
-        Aluno aluno3 = new Aluno("Pedro", "pedro@ig.com");  
+        Aluno aluno2 = new Aluno("Bob", "bob@email.com");
+        Aluno aluno3 = new Aluno("Pedro", "pedro@ig.com");
 
         // Simule o cadastro dos alunos aqui
 
@@ -78,7 +75,8 @@ public class App {
         Thread.sleep(2000);
     }
 
-    // simula uma matricula que falha por disciplina lotada e uma por aluno inexistente
+    // simula uma matricula que falha por disciplina lotada e uma por aluno
+    // inexistente
     public static void testarMatriculasInvalidas() throws InterruptedException {
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Testando matrículas inválidas...");
@@ -97,16 +95,16 @@ public class App {
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println("Listando alunos por disciplina...");
 
-        String[] codigosDisciplinas = {"DB101", "POO202", "ED303"};
-        
+        String[] codigosDisciplinas = { "DB101", "POO202", "ED303" };
+
         for (String codigo : codigosDisciplinas) {
             List<Aluno> inscritos = matriculador.listarInscritos(codigo);
             System.out.println("Disciplina " + codigo + " - Alunos inscritos (" + inscritos.size() + "):");
-            
+
             for (Aluno aluno : inscritos) {
                 System.out.println(" - " + aluno.getNome() + " (Matrícula: " + aluno.getMatricula() + ")");
             }
-            
+
             System.out.println();
         }
 

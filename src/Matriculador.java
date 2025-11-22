@@ -1,9 +1,5 @@
-package src;
-
 import java.util.List;
 import java.util.ArrayList;
-import src.Disciplina;
-import src.Aluno;
 
 public class Matriculador {
     List<Disciplina> ofertas;
@@ -64,7 +60,7 @@ public class Matriculador {
     }
 
     public List<Aluno> listarInscritos(String codigoDisciplina) {
-        
+
         for (Disciplina disciplina : ofertas) {
             if (disciplina.getCodigo().equals(codigoDisciplina)) {
                 return disciplina.getAlunos();
